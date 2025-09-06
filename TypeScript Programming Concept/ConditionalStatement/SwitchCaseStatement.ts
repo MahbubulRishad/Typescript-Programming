@@ -72,10 +72,4 @@ switch (x - y){  // expression
     default:
         console.log("Result Other");
 
-
-
-
-
-
-
 }

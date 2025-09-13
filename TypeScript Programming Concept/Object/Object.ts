@@ -71,7 +71,7 @@ let book1: Book = {
     getInfo: function (): string {
         return (`Id: ${this.pId} Product name: ${this.pName} Price: ${this.pPrice}`);
     }
-} 
+}
 
 let book2: Book = {
     pId: 103,
@@ -84,3 +84,28 @@ let book2: Book = {
 
 console.log(book1.getInfo());
 console.log(book2.getInfo());
+
+// intersection type
+type Logger = {
+    log: () => void;
+};
+
+type ErrorHandler = {
+    handleError: (msg: string) => void;
+};
+
+type Service = Logger & ErrorHandler;
+
+let service: Service = {
+    // log: () => console.log("Logging..."),
+    log: function (): void {
+        console.log("Logging");
+    },
+    // handleError: (msg) => console.log("Error:", msg)
+    handleError: function (msg: string): void {
+        console.log("Error:", msg);
+    }
+};
+
+service.log();               // Logging...
+service.handleError("404");  // Error: 404

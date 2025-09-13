@@ -56,4 +56,31 @@ console.log(student.getSummary());
 
 
 
-// 3. using type aliases
+// 3. using type aliases 
+type Book = {
+    pId: number,
+    pName: string,
+    pPrice: number,
+    getInfo: () => string
+}
+
+let book1: Book = {
+    pId: 102,
+    pName: "Physices 1",
+    pPrice: 500,
+    getInfo: function (): string {
+        return (`Id: ${this.pId} Product name: ${this.pName} Price: ${this.pPrice}`);
+    }
+} 
+
+let book2: Book = {
+    pId: 103,
+    pName: "Math",
+    pPrice: 550,
+    getInfo: function (): string {
+        return (`Id: ${this.pId} Product name: ${this.pName} Price: ${this.pPrice}`);
+    }
+}
+
+console.log(book1.getInfo());
+console.log(book2.getInfo());

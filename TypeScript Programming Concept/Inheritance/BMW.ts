@@ -27,3 +27,12 @@ bmw.stop();
 
 let bmw2 = new BMW("BMW", "Red", "B-102", 2024);
 bmw2.start();
+
+// Parent class obj is holding child class obj
+console.log("--Parent class obj is holding child class obj--***************");
+let car: Car = new BMW ("BMW", "Blue", "B-101", 2024);
+car.displayInfo() // method in present both parent and child class
+
+car.start();
+
+// car.yom() - not accessible as it is not a parent method
